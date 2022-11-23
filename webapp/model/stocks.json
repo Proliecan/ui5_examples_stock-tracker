@@ -1,0 +1,97 @@
+{
+    "config": {
+        "detail_levels": {
+            "normal": {
+                "frame_type": "OneByOne",
+                "columns_per_card": 2,
+                "price_digits": 3,
+                "change_decimals": 1
+            },
+            "detailed": {
+                "frame_type": "TwoByOne",
+                "columns_per_card": 4,
+                "price_digits": 10,
+                "change_decimals": 4
+            }
+        },
+        "api": {
+            "finnhub_base_url": "https://finnhub.io/api/v1/",
+            "marketwatch_base_url": "https://www.marketwatch.com/investing/stock/",
+            "github_url": "https://github.com/Proliecan/ui5_examples_stock-tracker"
+        },
+        "colors": {
+            "positive": "Good",
+            "neutral": "Critical",
+            "negative": "Error"
+        },
+        "indicators": {
+            "positive": "Up",
+            "neutral": "None",
+            "negative": "Down"
+        },
+        "scopes": {
+            "remove": "ActionRemove",
+            "display": "Display"
+        }
+    },
+    "symbols": [
+        "SAP",
+        "AAPL",
+        "MSFT",
+        "AMZN",
+        "ABNB",
+        "BX",
+        "KO",
+        "UBER",
+        "PLTR",
+        "BB",
+        "GME",
+        "SPOT",
+        "K",
+        "MCD"
+    ],
+    "bin": {
+        "settings": {
+            "scope": "Display",
+            "detailed": false,
+            "detail_level": {
+                "frame_type": "OneByOne",
+                "columns_per_card": 2,
+                "price_digits": 3,
+                "change_decimals": 1
+            }
+        },
+        "tiles": [
+            {
+                "symbol": "ELLIOT",
+                "name": "Iamthedeepstate Inc.",
+                "currency": "SOULS",
+                "current": "15798.49",
+                "percent_change": "-0.2666",
+                "time": "1669064403",
+                "color": "Good",
+                "indicator": "Up"
+            },
+            {
+                "symbol": "SAP",
+                "name": "Sympathy And Profit",
+                "currency": "EUR",
+                "current": "108.5",
+                "percent_change": "-0.34",
+                "time": "1669064403",
+                "color": "Error",
+                "indicator": "Down"
+            },
+            {
+                "symbol": "Ebay",
+                "name": "Moral on Sale",
+                "currency": "USD",
+                "current": "148.01",
+                "percent_change": "-0.2",
+                "time": "1669064403",
+                "color": "Critical",
+                "indicator": "Down"
+            }
+        ]
+    }
+}

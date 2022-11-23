@@ -1,36 +1,38 @@
-<mvc:XMLView 
-    xmlns="sap.m"
-	height="100%"
-	xmlns:mvc="sap.ui.core.mvc">
-    
-<App>
-	<Page
-		title="Title"
-		class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer"
-		showNavButton="true" >
-		<headerContent>
-			<Button icon="sap-icon://action" tooltip="Share" />
-		</headerContent>
-		<subHeader>
-			<OverflowToolbar>
-				<SearchField />
-			</OverflowToolbar>
-		</subHeader>
-		<content>
-			<VBox>
-				<Text text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" />
-			</VBox>
-		</content>
-		<footer>
-			<OverflowToolbar>
-				<ToolbarSpacer/>
-				<Button text="Accept" type="Accept" />
-				<Button text="Reject" type="Reject" />
-				<Button text="Edit" />
-				<Button text="Delete" />
-			</OverflowToolbar>
-		</footer>
-	</Page>
-</App>
-
+<mvc:XMLView xmlns="sap.m" height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.f" xmlns:core="sap.ui.core" controllerName="stock-tracker.controller.App">
+    <App>
+        <Page title="Stock Tracker" class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer" showNavButton="true" navButtonPress="onBack">
+            <headerContent>
+				<Label text="Detailed View:"></Label>
+				<Switch id="detail_switch" change="onDetailLevelChange" state="false"></Switch>
+                <ToolbarSpacer width="20px" />
+                <Button icon="https://skillicons.dev/icons?i=github" press="onGithub" />
+            </headerContent>
+            <ScrollContainer height="100%" width="100%" vertical="true">
+                <content>
+                    <f:GridContainer class="sapUiSmallMargin" items="{/bin/tiles}">
+                        <f:layout>
+                            <f:GridContainerSettings rowSize="84px" columnSize="84px" gap="8px" />
+                        </f:layout>
+                        <GenericTile press="onTile" header="{symbol}" subheader="{name}" scope="{/bin/settings/scope}" frameType="{/bin/settings/detail_level/frame_type}">
+                            <layoutData>
+                                <f:GridContainerItemLayoutData minRows="2" columns="{/bin/settings/detail_level/columns_per_card}" />
+                            </layoutData>
+                            <TileContent footer="{time}" unit="{currency}">
+                                <NumericContent icon="{icon}" truncateValueTo="{/bin/settings/detail_level/price_digits}" scale="{percent_change}" value="{current}" valueColor="{color}" indicator="{indicator}" withMargin="false" />
+                            </TileContent>
+                        </GenericTile>
+                    </f:GridContainer>
+                </content>
+            </ScrollContainer>
+            <footer>
+                <OverflowToolbar>
+                    <ToolbarSpacer />
+                    <Button icon="sap-icon://synchronize" press="onSync" />
+                    <ToggleButton icon="sap-icon://edit" press="onEdit" />
+                    <ToolbarSpacer width="20px" />
+                    <Button text="Add" type="Accept" press="onAdd" />
+                </OverflowToolbar>
+            </footer>
+        </Page>
+    </App>
 </mvc:XMLView>
