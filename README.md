@@ -4,17 +4,17 @@
 
 - [UI5 examples: Stock Tracker](#ui5-examples-stock-tracker)
   - [Table of Contents](#table-of-contents)
-  - [About ](#about-)
-  - [Getting Started ](#getting-started-)
+  - [About](#about)
+  - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
-  - [Usage ](#usage-)
+  - [Deployment](#deployment)
 
-## About <a name = "about"></a>
+## About
 
 This is an example app written in OpenUI5 which aims to aid the learning and understanding of the framework.  
 It is part of a series of Apps I wrote for this purpose. See more in its [GitHub Repo]([https://](https://github.com/Proliecan/ui5_examples)).
 
-## Getting Started <a name = "getting_started"></a>
+## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
@@ -33,7 +33,7 @@ In VSCode just use the Plugin `ritwickdey.LiveServer`.
 - A Webserver
 - A `finnhub.io` api token
 
-## Usage <a name = "usage"></a>
+## Deployment
 
 1. Don't
 2. For long term usage I recommend to use a different API, a webcrawler or the paid tier of the `finnhub.io` api.
